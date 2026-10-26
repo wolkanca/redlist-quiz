@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
     <title>Terrorist Quiz</title>
+    <link rel="dns-prefetch" href="//i1.wp.com">
     <link rel="dns-prefetch" href="//www.terorarananlar.pol.tr">
     <meta property="og:title" content="Terörist tanıma, terörist testi oyunu: terorist-quiz">
     <meta property="og:description" content="Terör örgütü bulma oyunu. Terörden arananlar listesi oyunu: terörist quiz. - Terörist tanıma, terörist testi oyunu: terorist-quiz Oyun, Terörist, Test">
@@ -528,7 +529,7 @@
         const o = [e, ...a].sort((() => Math.random() - .5)),
           s = document.getElementById("quiz-container");
         let l = n.IlkGorselURL,
-          c = l.replace(/(https?:\/\/)(www\..*?)(:*)/g, "$1i0.wp.com/$3"),
+          c = l.replace(/(https?:\/\/)(www\..*?)(:*)/g, "$1i1.wp.com/$3"),
           h = l.split("/").pop().split(".")[0];
         l.substring(0, l.length - 1);
         s.innerHTML = `<a class="michaelsikkofield" onclick="checkAnswer('${e}','${e}')" href="javascript://" title="michaelsikkofield fix">🐺</a>
