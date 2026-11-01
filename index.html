@@ -16,387 +16,858 @@
     <meta name="twitter:site" content="@wolkanca">
     <meta name="twitter:creator" content="@wolkanca">
     <style>
-      :root {
-        --la: #f2f2f2;
-        --lr: #000;
-        --lh: #fff;
-        --lm: #6d6d6d;
-        --ll: #000;
-        --lv: #616161;
-        --lb: #dedfdf;
-        --lb2: #32373c;
-        --lk: #cd2653;
-        --lac: #cd2653;
-        --ly: green;
-        --da: #181818;
-        --dr: #fff;
-        --dh: #0d0d0d;
-        --dm: #d1d1d1;
-        --dl: #e5e5e5;
-        --dv: #aaa;
-        --db: #222;
-        --db2: #cdc8c3;
-        --dk: #cd2653;
-        --dac: #f47983;
-        --dy: lightgreen;
-        --span: #616161;
-        --col2: #787d85;
-        --bg2: #fcfcfc;
-        --brd2: #e0e1e1;
-        --font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Ubuntu, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-      }
-      @media(prefers-color-scheme: light) {
-        :root {
-          --arka: var(--la);
-          --renk: var(--lr);
-          --hefot: var(--lh);
-          --metin: var(--lm);
-          --link: var(--ll);
-          --visited: var(--lv);
-          --border: var(--lb);
-          --border2: var(--lb2);
-          --kirmizi: var(--lk);
-          --accent: var(--lac);
-          --yesil: var(--ly)
-        }
-      }
-      @media(prefers-color-scheme: dark) {
-        :root {
-          color-scheme: dark;
-          --arka: var(--da);
-          --renk: var(--dr);
-          --hefot: var(--dh);
-          --metin: var(--dm);
-          --link: var(--dl);
-          --visited: var(--dv);
-          --border: var(--db);
-          --border2: var(--db2);
-          --kirmizi: var(--dk);
-          --accent: var(--dac);
-          --yesil: var(--dy)
-        }
-      }
-      html {
-        font-size: 62.5%;
-        min-width: 310px;
-        accent-color: var(--accent);
-        scroll-behavior: smooth
-      }
-      html,
-      body {
-        border: none;
-        margin: 0;
-        padding: 0;
-        background-color: var(--hefot);
-        overflow-x: hidden;
-        min-width: 300px;
-      }
-      body {
-        color: var(--renk);
-        box-sizing: border-box;
-        font-family: var(--font-family);
-        font-size: 1.8rem;
-        letter-spacing: -.015em;
-        text-align: left;
-      }
-      a {
-        color: var(--link);
-        text-decoration-line: underline;
-        text-decoration-color: var(--col2)
-      }
-      a:hover,
-      a:focus {
-        text-decoration: none
-      }
-      button {
-        appearance: none;
-        background: var(--accent);
-        border: none;
-        border-radius: .3rem;
-        color: var(--hefot);
-        cursor: pointer;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 600;
-        letter-spacing: .0333em;
-        line-height: 1.25;
-        margin: 0;
-        opacity: 1;
-        padding: 1.1em 1.44em;
-        text-align: center;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: opacity .15s linear;
-      }
-      #trr {
-        font-family: var(--font-family);
-        letter-spacing: inherit;
-        text-align: center;
-        display: block;
-        position: relative;
-        margin: 0 auto;
-        padding: 0;
-        width: 100%;
-      }
-      #trr .answer-button,
-      #trr #reset-button {
-        color: #fff;
-        cursor: pointer;
-        flex: auto;
-        font-size: small;
-      }
-      #trr .answer-button {
-        font-size: initial;
-        line-height: 1;
-        padding: 0;
-        height: 6rem;
-        width: calc(50% - 1rem);
-        max-width: 28rem;
-        background: var(--border);
-        color: var(--renk);
-        border: 1px dashed var(--col2);
-      }
-      #trr .answer-button:hover {
-        border-color: var(--accent);
-      }
-      #trr #reset-button {
-        font-size: x-small;
-        background: var(--kirmizi);
-        flex-grow: 0;
-        margin-right: 10%;
-      }
-      #trr #quiz-container img {
-        margin: auto;
-        width: 100%;
-        object-fit: contain;
-        display: block;
-        min-height: 300px;
-      }
-      #trr .abuttons {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-      }
-      #trr #quiz-container {
-        min-height: 465px;
-        overflow: hidden;
-      }
-      #trr h2 {
-        margin-top: 0;
-      }
-      #trr h3 {
-        margin: 1rem auto;
-      }
-      #trr h4 {
-        margin: 0;
-      }
-      #siviller {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        margin: 2rem auto 3rem;
-      }
-      #trr .container {
-        position: relative;
-        overflow: hidden;
-        margin: 0 auto;
-        padding: 3vh 0.3vw;
-        width: 58rem;
-        max-width: 98%;
-        min-height: 70rem;
-        border: 1px solid var(--col2);
-        border-radius: 1rem;
-        background: var(--hefot);
-      }
-      #trr .image-container img {
-        height: 300px;
-        aspect-ratio: 3 / 4;
-      }
-      #trr .scoreboard {
-        margin: 1rem auto;
-        background: var(--arka);
-        border: 1px solid var(--border);
-        border-radius: 3rem;
-        height: 8rem;
-        display: flex;
-        gap: 1rem;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-      }
-      #trr .switch {
-        position: relative;
-        display: inline-block;
-        width: 60px;
-        height: 34px;
-        zoom: 0.5;
-        margin-top: 0.1rem;
-      }
-      #trr .switch input {
-        opacity: 0;
-        width: 0;
-        height: 0;
-      }
-      #trr .slider {
-        position: absolute;
-        cursor: pointer;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
-      }
-      #trr .slider:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: white;
-        -webkit-transition: 0.4s;
-        transition: 0.4s;
-      }
-      #trr input:checked+.slider {
-        background-color: #2196f3;
-      }
-      #trr input:focus+.slider {
-        box-shadow: 0 0 1px #2196f3;
-      }
-      #trr input:checked+.slider:before {
-        -webkit-transform: translateX(26px);
-        -ms-transform: translateX(26px);
-        transform: translateX(26px);
-      }
-      #trr .slider.round {
-        border-radius: 34px;
-      }
-      #trr .slider.round:before {
-        border-radius: 50%;
-      }
-      #trr .about {
-        font-size: small;
-        float: right;
-        text-align: right;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        z-index: 1;
-        background: var(--arka);
-        padding: 1rem;
-      }
-      #trr .about p {
-        font-size: smaller;
-      }
-      #trr .about summary {
-        cursor: pointer;
-      }
-      #trr .about summary:first-of-type {
-        list-style-type: "❓";
-      }
-      #scoreboard>span>strong {
-        font-size: 2.5rem;
-        display: inline-block;
-        vertical-align: text-bottom;
-        line-height: 1;
-      }
-      #scoreboard>span:first-child>strong,
-      .d0ru>span:first-child>strong {
-        color: var(--yesil);
-      }
-      #scoreboard>span:not(:first-child)>strong,
-      .naud0ru>span:not(:first-child)>strong {
-        color: var(--accent);
-      }
-      html.swal2-shown,
-      html.swal2-shown>body {
-        background: var(--arka);
-        color: var(--renk);
-      }
-      .swal2-show {
-        transform: scale(1.2);
-      }
-      @media (min-width: 700px) {
-        .swal2-show {
-          zoom: 1.2;
-        }
-      }
-      div:where(.swal2-container) .swal2-html-container>small {
-        display: block;
-        width: 100%;
-      }
-      #trr a.opyls {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        padding: 1rem;
-        width: 50%;
-        text-decoration: none;
-        font-size: small;
-        z-index: 19;
-        border-bottom: 1px solid var(--accent);
-      }
-      #trr details.about[open] {
-        z-index: 20 !important;
-      }
-      #trrimg {
-        background-image: var(--background);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      #trr .michaelsikkofield {
-        position: absolute;
-        right: 0;
-        top: 0;
-        padding: 1rem;
-        color: var(--border2);
-        text-decoration: none;
-        border: 1px solid var(--border);
-        border-radius: 0 1rem;
-        font-size: 3rem;
-      }
-      #trr .michaelsikkofield:hover {
-        backdrop-filter: contrast(0.5);
-      }
-      #trr .michaelsikkofield:hover:after {
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 999;
-        content: "Acil durumlar harici kullanma! 🚨";
-        font-size: 1.3rem;
-        color: var(--accent);
-        font-weight: normal;
-        display: block;
-        width: 9rem;
-        margin-right: 6rem;
-      }
-      html .swal2-container .swal2-popup,
-        html .swal2-success-circular-line-left,
-        html .swal2-success-circular-line-right,
-        html .swal2-success-fix {
-        background: var(--arka);
-        color: var(--metin);
-      }
-      #oyunlink {
-        text-decoration: none;
-        color: transparent;
-        text-indent: -999rem;
-      }
+		:root {
+		  --game-bg: #0b0d10;
+		  --game-card: #11151a;
+		  --game-card-2: #171c22;
+		  --game-border: rgba(255,255,255,.09);
+		  --game-border-hover: rgba(255,255,255,.22);
+		  --game-text: #f5f7fa;
+		  --game-muted: #9ba6b2;
+		  --game-accent: #f2556b;
+		  --game-success: #31c96b;
+		  --game-danger: #ff4d5c;
+		  --game-footer: rgba(10,12,15,.94);
+		  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+		}
+
+		html {
+		  font-size: 62.5%;
+		  min-width: 300px;
+		  scroll-behavior: smooth;
+		  color-scheme: dark;
+		}
+
+		html,
+		body {
+		  margin: 0;
+		  padding: 0;
+		  border: 0;
+		  min-width: 300px;
+		  overflow-x: hidden;
+		  background: var(--game-bg);
+		}
+
+		body {
+		  box-sizing: border-box;
+		  color: var(--game-text);
+		  font-family: var(--font-family);
+		  font-size: 1.6rem;
+		  letter-spacing: -.015em;
+		}
+
+		*,
+		*:before,
+		*:after {
+		  box-sizing: border-box;
+		}
+
+		a {
+		  color: inherit;
+		}
+
+		button {
+		  appearance: none;
+		  font-family: inherit;
+		}
+
+		#trr {
+		  width: 100%;
+		  display: block;
+		  position: relative;
+		  margin: 0 auto;
+		  padding: 2rem 0;
+		  text-align: center;
+		  color: var(--game-text);
+		}
+
+		/* Ana oyun kartı */
+		#trr .container {
+		  position: relative;
+		  width: 58rem;
+		  max-width: calc(100% - 2rem);
+		  min-height: auto;
+		  margin: 0 auto;
+		  padding: 2.4rem 2.4rem 7rem;
+
+		  overflow: hidden;
+
+		  background:
+			radial-gradient(
+			  circle at top,
+			  rgba(255,255,255,.045),
+			  transparent 38%
+			),
+			var(--game-card);
+
+		  border: 1px solid var(--game-border);
+		  border-radius: 2.2rem;
+
+		  box-shadow:
+			0 20px 60px rgba(0,0,0,.28),
+			inset 0 1px rgba(255,255,255,.04);
+		}
+
+		/* Başlık */
+		#trr h2 {
+		  margin: .3rem 0 2rem;
+		  color: var(--game-text);
+		  font-size: 2.6rem !important;
+		  line-height: 1.2;
+		  font-weight: 750;
+		  letter-spacing: -.04em;
+		}
+
+		/* Quiz alanı */
+		#trr #quiz-container {
+		  min-height: 0;
+		  overflow: visible;
+		}
+
+		/* Fotoğraf */
+		#trr .image-container {
+		  position: relative;
+		  width: min(32rem, 100%);
+		  margin: 0 auto 1.8rem;
+		}
+
+		#trr .image-container img {
+		  display: block;
+		  width: 100%;
+		  height: 34rem;
+		  min-height: 0;
+		  margin: 0 auto;
+
+		  aspect-ratio: 3 / 4;
+		  object-fit: contain;
+
+		  background-color: #090b0e;
+		  background-size: contain;
+		  background-repeat: no-repeat;
+		  background-position: center;
+
+		  border: 1px solid rgba(255,255,255,.08);
+		  border-radius: 1.8rem;
+
+		  box-shadow:
+			0 14px 35px rgba(0,0,0,.35);
+		}
+
+		/* Soru */
+		#trr h3 {
+		  margin: 1.8rem auto 1.5rem;
+		  color: var(--game-text);
+		  font-size: 2rem !important;
+		  line-height: 1.25;
+		  font-weight: 700;
+		  letter-spacing: -.02em;
+		}
+
+		/* Cevaplar */
+		#trr .abuttons {
+		  display: grid;
+		  grid-template-columns: repeat(2, minmax(0, 1fr));
+		  gap: .9rem;
+		  width: 100%;
+		}
+
+		#trr .answer-button {
+		  width: 100%;
+		  max-width: none;
+		  min-height: 6.2rem;
+		  height: auto;
+
+		  margin: 0;
+		  padding: 1.2rem 1rem;
+
+		  color: var(--game-text);
+
+		  background:
+			linear-gradient(
+			  180deg,
+			  rgba(255,255,255,.045),
+			  rgba(255,255,255,.015)
+			),
+			var(--game-card-2);
+
+		  border: 1px solid var(--game-border);
+		  border-radius: 1.3rem;
+
+		  cursor: pointer;
+
+		  font-size: 1.55rem;
+		  line-height: 1.25;
+		  font-weight: 650;
+		  text-transform: none;
+		  letter-spacing: 0;
+
+		  box-shadow:
+			inset 0 1px rgba(255,255,255,.025);
+
+		  transition:
+			transform .15s ease,
+			border-color .15s ease,
+			background .15s ease,
+			box-shadow .15s ease;
+		}
+
+		#trr .answer-button:hover {
+		  transform: translateY(-2px);
+
+		  border-color: var(--game-border-hover);
+
+		  background:
+			linear-gradient(
+			  180deg,
+			  rgba(255,255,255,.075),
+			  rgba(255,255,255,.025)
+			),
+			var(--game-card-2);
+
+		  box-shadow:
+			0 10px 24px rgba(0,0,0,.18);
+		}
+
+		#trr .answer-button:active {
+		  transform: translateY(0) scale(.985);
+		}
+
+		#trr .answer-button:focus-visible {
+		  outline: 3px solid rgba(242,85,107,.3);
+		  outline-offset: 2px;
+		}
+
+		/* Skor */
+		#trr .scoreboard {
+		  display: flex;
+		  flex-direction: row;
+		  flex-wrap: wrap;
+		  align-items: center;
+		  justify-content: center;
+
+		  width: 100%;
+		  min-height: 7rem;
+		  height: auto;
+
+		  margin: 2rem auto 1.5rem;
+		  padding: 1.2rem 2rem;
+
+		  gap: 1.1rem;
+
+		  background: rgba(255,255,255,.025);
+
+		  border: 1px solid var(--game-border);
+		  border-radius: 1.6rem;
+
+		  box-shadow:
+			inset 0 1px rgba(255,255,255,.025);
+		}
+
+		#scoreboard > span {
+		  color: var(--game-muted);
+		  font-size: 1.45rem;
+		}
+
+		#scoreboard > span > strong {
+		  display: inline-block;
+		  margin-left: .3rem;
+
+		  font-size: 2.3rem;
+		  line-height: 1;
+		  font-weight: 800;
+		  vertical-align: middle;
+		}
+
+		#scoreboard > span:first-child > strong,
+		.d0ru > span:first-child > strong {
+		  color: var(--game-success);
+		}
+
+		#scoreboard > span:not(:first-child) > strong,
+		.naud0ru > span:not(:first-child) > strong {
+		  color: var(--game-danger);
+		}
+
+		/* Alt kontrol alanı */
+		#siviller {
+		  display: flex;
+		  flex-direction: row;
+		  flex-wrap: wrap;
+		  align-items: center;
+		  justify-content: center;
+
+		  width: 100%;
+		  margin: 1.2rem auto 2.5rem;
+
+		  gap: 1.4rem;
+		}
+
+		/* Reset butonu */
+		#trr #reset-button {
+		  flex: 0 0 auto;
+
+		  margin: 0;
+		  padding: 1.2rem 1.6rem;
+
+		  color: #ff6a77;
+		  background: rgba(255,77,92,.11);
+
+		  border: 1px solid rgba(255,77,92,.24);
+		  border-radius: 1rem;
+
+		  cursor: pointer;
+
+		  font-size: 1.15rem;
+		  line-height: 1.2;
+		  font-weight: 700;
+		  text-transform: uppercase;
+		  letter-spacing: .02em;
+
+		  transition:
+			background .15s ease,
+			border-color .15s ease,
+			transform .15s ease;
+		}
+
+		#trr #reset-button:hover {
+		  background: rgba(255,77,92,.18);
+		  border-color: rgba(255,77,92,.45);
+		  transform: translateY(-1px);
+		}
+
+		#trr #reset-button:active {
+		  transform: scale(.98);
+		}
+
+		/* Sivilleri Ekle yazısı */
+		#siviller h4 {
+		  margin: 0;
+		  color: var(--game-muted);
+		  font-size: 1.4rem !important;
+		  line-height: 1.2;
+		  font-weight: 650;
+		}
+
+		/* Toggle */
+		#trr .switch {
+		  position: relative;
+		  display: inline-block;
+
+		  flex: 0 0 auto;
+
+		  width: 4.4rem;
+		  height: 2.5rem;
+
+		  margin: 0;
+		}
+
+		#trr .switch input {
+		  width: 0;
+		  height: 0;
+		  opacity: 0;
+		}
+
+		#trr .slider {
+		  position: absolute;
+
+		  top: 0;
+		  right: 0;
+		  bottom: 0;
+		  left: 0;
+
+		  cursor: pointer;
+
+		  background: #343b44;
+
+		  border-radius: 99rem;
+
+		  box-shadow:
+			inset 0 0 0 1px rgba(255,255,255,.08);
+
+		  transition: .2s ease;
+		}
+
+		#trr .slider:before {
+		  position: absolute;
+
+		  content: "";
+
+		  width: 1.9rem;
+		  height: 1.9rem;
+
+		  left: .3rem;
+		  bottom: .3rem;
+
+		  background: #fff;
+
+		  border-radius: 50%;
+
+		  box-shadow:
+			0 2px 7px rgba(0,0,0,.3);
+
+		  transition: .2s ease;
+		}
+
+		#trr input:checked + .slider {
+		  background: var(--game-accent);
+		}
+
+		#trr input:checked + .slider:before {
+		  transform: translateX(1.9rem);
+		}
+
+		#trr input:focus-visible + .slider {
+		  outline: 3px solid rgba(242,85,107,.3);
+		  outline-offset: 2px;
+		}
+
+		/* Kurt butonu */
+		#trr .michaelsikkofield {
+		  position: absolute;
+
+		  top: 1.3rem;
+		  right: 1.3rem;
+
+		  z-index: 10;
+
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+
+		  width: 4.2rem;
+		  height: 4.2rem;
+
+		  padding: 0;
+
+		  color: var(--game-muted);
+		  background: rgba(255,255,255,.035);
+
+		  border: 1px solid var(--game-border);
+		  border-radius: 1.2rem;
+
+		  text-decoration: none;
+
+		  font-size: 2rem;
+		  line-height: 1;
+
+		  backdrop-filter: blur(12px);
+
+		  transition:
+			background .15s ease,
+			color .15s ease,
+			transform .15s ease;
+		}
+
+		#trr .michaelsikkofield:hover {
+		  color: white;
+		  background: rgba(255,255,255,.08);
+		  transform: scale(1.04);
+		}
+
+		#trr .michaelsikkofield:hover:after {
+		  position: absolute;
+
+		  top: 5rem;
+		  right: 0;
+
+		  width: 15rem;
+
+		  padding: .7rem 1rem;
+
+		  content: "Acil durumlar harici kullanma! 🚨";
+
+		  color: var(--game-muted);
+		  background: #11151a;
+
+		  border: 1px solid var(--game-border);
+		  border-radius: .8rem;
+
+		  font-size: 1.1rem;
+		  line-height: 1.35;
+		  font-weight: normal;
+
+		  box-shadow:
+			0 8px 25px rgba(0,0,0,.28);
+		}
+
+		/* Fotoğraf linki */
+		#oyunlink {
+		  display: block;
+		  color: transparent;
+		  text-decoration: none;
+		}
+
+		/* Footer */
+		#trr .about {
+		  position: absolute;
+
+		  right: 0;
+		  bottom: 0;
+
+		  z-index: 20;
+
+		  width: 50%;
+		  min-height: 5rem;
+
+		  padding: 1.5rem 2rem;
+
+		  color: var(--game-muted);
+		  background: var(--game-footer);
+
+		  border-top: 1px solid var(--game-border);
+
+		  font-size: 1.2rem;
+		  text-align: right;
+
+		  backdrop-filter: blur(12px);
+		}
+
+		#trr .about summary {
+		  cursor: pointer;
+		  color: var(--game-text);
+		}
+
+		#trr .about summary:first-of-type {
+		  list-style-type: "❓";
+		}
+
+		#trr .about p {
+		  margin: 1rem 0 0;
+		  padding: 1rem;
+
+		  color: var(--game-muted);
+		  background: #11151a;
+
+		  border: 1px solid var(--game-border);
+		  border-radius: 1rem;
+
+		  font-size: 1.2rem;
+		  line-height: 1.5;
+		}
+
+		#trr .about a {
+		  color: var(--game-text);
+		}
+
+		#trr a.opyls {
+		  position: absolute;
+
+		  left: 0;
+		  bottom: 0;
+
+		  z-index: 19;
+
+		  display: flex;
+		  align-items: center;
+
+		  width: 50%;
+		  min-height: 5rem;
+
+		  padding: 1.5rem 2rem;
+
+		  color: var(--game-muted);
+		  background: var(--game-footer);
+
+		  border-top: 1px solid var(--game-border);
+
+		  text-decoration: none;
+
+		  font-size: 1.2rem;
+
+		  backdrop-filter: blur(12px);
+
+		  transition: color .15s ease;
+		}
+
+		#trr a.opyls:hover {
+		  color: white;
+		}
+
+		/* SweetAlert */
+		html.swal2-shown,
+		html.swal2-shown > body {
+		  background: var(--game-bg);
+		  color: var(--game-text);
+		}
+
+		html .swal2-container .swal2-popup,
+		html .swal2-success-circular-line-left,
+		html .swal2-success-circular-line-right,
+		html .swal2-success-fix {
+		  color: var(--game-text);
+		  background: var(--game-card);
+		}
+
+		html .swal2-container .swal2-popup {
+		  border: 1px solid var(--game-border);
+		  border-radius: 2rem;
+
+		  box-shadow:
+			0 25px 80px rgba(0,0,0,.45);
+		}
+
+		html .swal2-container .swal2-title,
+		html .swal2-container .swal2-html-container {
+		  color: var(--game-text);
+		}
+
+		div:where(.swal2-container) .swal2-html-container > small {
+		  display: block;
+		  width: 100%;
+		}
+
+		.swal2-show {
+		  transform: scale(1);
+		}
+
+		/* Tablet */
+		@media (max-width: 700px) {
+
+		  #trr .container {
+			width: 54rem;
+		  }
+
+		  #trr .image-container {
+			width: min(30rem, 85%);
+		  }
+		}
+
+		/* Mobil */
+		@media (max-width: 520px) {
+
+		  html,
+		  body {
+			width: 100%;
+		  }
+
+		  #trr {
+			min-height: 100svh;
+			padding: 0;
+		  }
+
+		  #trr .container {
+			width: 100%;
+			max-width: 100%;
+			min-height: 100svh;
+
+			margin: 0;
+			padding:
+			  max(1.2rem, env(safe-area-inset-top))
+			  1.4rem
+			  calc(6.2rem + env(safe-area-inset-bottom));
+
+			border-left: 0;
+			border-right: 0;
+			border-top: 0;
+			border-radius: 0;
+
+			box-shadow: none;
+		  }
+
+		  #trr h2 {
+			margin: .7rem 0 1.4rem;
+
+			font-size: 2rem !important;
+			line-height: 1.2;
+		  }
+
+		  /* Kurt butonu */
+		  #trr .michaelsikkofield {
+			top: max(.9rem, env(safe-area-inset-top));
+			right: 1rem;
+
+			width: 3.8rem;
+			height: 3.8rem;
+
+			border-radius: 1rem;
+
+			font-size: 1.8rem;
+		  }
+
+		  /* Fotoğraf */
+		  #trr .image-container {
+			width: min(25rem, 72vw);
+			margin-bottom: 1.2rem;
+		  }
+
+		  #trr .image-container img {
+			width: 100%;
+			height: auto;
+			max-height: 32rem;
+
+			aspect-ratio: 3 / 4;
+
+			border-radius: 1.4rem;
+		  }
+
+		  /* Soru */
+		  #trr h3 {
+			margin: 1.3rem auto 1.1rem;
+
+			font-size: 1.8rem !important;
+		  }
+
+		  /* Cevaplar */
+		  #trr .abuttons {
+			gap: .7rem;
+		  }
+
+		  #trr .answer-button {
+			min-height: 5.2rem;
+
+			padding: .9rem .7rem;
+
+			border-radius: 1.1rem;
+
+			font-size: 1.25rem;
+			line-height: 1.2;
+		  }
+
+		  /* Skor */
+		  #trr .scoreboard {
+			min-height: 5.8rem;
+
+			margin: 1.2rem auto;
+			padding: .9rem 1rem;
+
+			border-radius: 1.3rem;
+
+			gap: .6rem;
+		  }
+
+		  #scoreboard > span {
+			font-size: 1.25rem;
+		  }
+
+		  #scoreboard > span > strong {
+			font-size: 1.9rem;
+		  }
+
+		  /* Alt kontrol paneli */
+		  #siviller {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+
+			width: 100%;
+
+			margin: 1rem auto 1.5rem;
+			padding: .8rem;
+
+			gap: .8rem;
+
+			background: rgba(255,255,255,.025);
+
+			border: 1px solid var(--game-border);
+			border-radius: 1.3rem;
+		  }
+
+		  #trr #reset-button {
+			flex: 0 0 auto;
+
+			padding: .9rem 1.1rem;
+
+			font-size: .95rem;
+
+			white-space: nowrap;
+		  }
+
+		  #siviller h4 {
+			margin-left: auto;
+
+			font-size: 1.15rem !important;
+
+			white-space: nowrap;
+		  }
+
+		  #trr .switch {
+			flex: 0 0 auto;
+
+			width: 4rem;
+			height: 2.3rem;
+		  }
+
+		  #trr .slider:before {
+			width: 1.7rem;
+			height: 1.7rem;
+
+			left: .3rem;
+			bottom: .3rem;
+		  }
+
+		  #trr input:checked + .slider:before {
+			transform: translateX(1.7rem);
+		  }
+
+		  /* Footer */
+		  #trr .about,
+		  #trr a.opyls {
+			min-height: 4.8rem;
+
+			padding:
+			  1.4rem
+			  1.4rem
+			  calc(1.4rem + env(safe-area-inset-bottom));
+
+			font-size: 1.1rem;
+		  }
+
+		  #trr .about {
+			display: flex;
+			align-items: flex-start;
+			justify-content: flex-end;
+		  }
+
+		  #trr a.opyls {
+			align-items: flex-start;
+		  }
+
+		  #trr .about[open] {
+			width: 100%;
+
+			padding: 1.4rem;
+
+			text-align: left;
+
+			background: #11151a;
+		  }
+
+		  #trr .about[open] summary {
+			margin-left: auto;
+			text-align: right;
+		  }
+
+		  #trr .about[open] p {
+			width: 100%;
+			margin-top: 1rem;
+		  }
+		}
+
+		/* Çok dar ekran */
+		@media (max-width: 360px) {
+
+		  #trr .container {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		  }
+
+		  #trr .image-container {
+			width: min(23rem, 70vw);
+		  }
+
+		  #trr .answer-button {
+			min-height: 5rem;
+			font-size: 1.15rem;
+		  }
+
+		  #trr #reset-button {
+			padding: .8rem;
+			font-size: .9rem;
+		  }
+
+		  #siviller h4 {
+			font-size: 1.05rem !important;
+		  }
+		}
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.8/sweetalert2.all.min.js" integrity="sha512-ziDG00v9lDjgmzxhvyX5iztPHpSryN/Ct/TAMPmMmS2O3T1hFPRdrzVCSvwnbPbFNie7Yg5mF7NUSSp5smu7RA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
