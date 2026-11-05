@@ -1054,7 +1054,7 @@
         if (selectedAnswer === correctAnswer) {
           Swal.fire({
             icon: 'success',
-            html: `<span style="position:absolute;top:0;left:0;width:100%;margin:1rem auto;font-size:.8rem"><strong>${correctAnswer}</strong></span> Bravo! <small class="d0ru"><span>Doğru: <strong>${correctScore+1}</strong></span> | <span>Yanlış: <strong>${incorrectScore}</strong></span></small>`,
+            html: `<span style="position:absolute;top:0;left:0;width:100%;margin:1rem auto"><strong>${correctAnswer}</strong></span> Bravo! <small class="d0ru"><span>Doğru: <strong>${correctScore+1}</strong></span> | <span>Yanlış: <strong>${incorrectScore}</strong></span></small>`,
             confirmButtonText: 'Devam',
           }).then((result) => {
             correctScore++;
@@ -1064,7 +1064,7 @@
         } else {
           Swal.fire({
             icon: 'error',
-            html: `<span style="position:absolute;top:0;left:0;width:100%;margin:1rem auto;font-size:.8rem"><strong>${correctAnswer}</strong></span> Maalesef. <strong>${correctAnswer}</strong> olacaktı. <small class="naud0ru"><span>Doğru: <strong>${correctScore}</strong></span> | <span>Yanlış: <strong>${incorrectScore+1}</strong></small>`,
+            html: `<span style="position:absolute;top:0;left:0;width:100%;margin:1rem auto"><strong>${correctAnswer}</strong></span> Maalesef. <strong>${correctAnswer}</strong> olacaktı. <small class="naud0ru"><span>Doğru: <strong>${correctScore}</strong></span> | <span>Yanlış: <strong>${incorrectScore+1}</strong></small>`,
             confirmButtonText: 'Devam',
           }).then((result) => {
             incorrectScore++;
